@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom</title>
+    <style>
+      
+
+ /*__________________________ form _______________________*/
+        form{
+            border: 2px solid;
+            width: 50%;
+            padding: 10px;
+            border-radius: 4px;
+            margin: auto;
+            background-color: rgb(223, 219, 228);
+        }
+        form .input-text{
+            width: 40%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 3px;
+            border: none;
+            border: 1px solid;
+        }
+        h3{
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        #email{
+            width: 70%;
+        }
+        .course-type{
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .Question-title{
+            line-height: 40px;
+        }
+
+
+        select{
+            width: 30%;
+        }
+
+
+        .city-select{
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 40px;
+        }
+
+        #Typenumber{
+            width: 30%;
+            border: 1px solid;
+        }
+
+        #Qustion_pera{
+            max-height: 200px;
+            line-height: 40px;
+        }
+        textarea{
+            min-height: 40px;
+            width: 60%;
+        }
+        #buttonChange{
+          position: relative;
+          right: 35px;
+          height: 15px;
+          padding-top: 10px;         
+        }
+
+
+        ._btn{
+            padding: 4px 10px;
+            font-size: 20px ;
+            font-weight: bold;
+            border: 2px solid;
+            border-radius: 4px ;
+        }
+        
+
+        @media (max-width:600px){
+        form .input-text{
+            width: 70%;
+            border: 1px solid;
+        }
+        textarea{
+            border: 1px solid;
+            width: 70%;
+        }
+
+        }
+
+
+        @media (max-width:300px){
+        #buttonChange{
+          right: 10px;
+          height: 15px;
+          padding-top: 10px;         
+        }
+
+        #typeid{
+            width: 60%;
+            right: 0px;
+        }
+        
+        }
+
+     
+
+    
+        
+    </style>
+</head>
+<body>
+
+
+<!--____________________________ form ___________________________-->
+<form action="./submit Page/index.html">
+    <h3>Course Registration Form</h3>
+
+    <label for="Name"><b>Name:</b></label><br>
+    <input class="input-text"   type="text" id="Name" placeholder="Enter your First Name" required>
+    <input class="input-text" type="text"placeholder="Enter your Last Name" required>
+      <br />
+    <label for="text-fName"><b>Father name:</b></label><br>
+    <input class="input-text" type="text" id="text-fName" placeholder=" First Name" required>
+    <input class="input-text" type="text"  placeholder=" Last Name" required> <br />
+
+    <label for="email"><b>Email:</b></label><br>
+    <input class="input-text" type="email" id="email" placeholder=" Enter your email" required> <br />
+
+
+
+    <label for="Contact"><b>Contact:</b></label><br>
+    <input class="input-text" type="number" id="Contact" placeholder=" Enter your Phone number" required> <br />
+
+
+    <label for="typeid"><b>Password:</b></label><br>
+    <input type="password" class="input-text" id="typeid" placeholder="Enter password >8" onblur="longNum()">
+        <img src="./eye-solid.svg" onclick="changetype('hide')" id="buttonChange" >
+
+    <br />
+
+    <label for=""><b class="Question-title">Select your course</b></label><br />
+ <label for="" id="selectCourse" >
+    <input onclick="selectCourse('web')" value="Web" type="radio"  name="select" id="Web" ><label for="Web" class="course-type">Web Development</label> <br>
+    <input onclick="selectCourse('mobile')" type="radio" name="select" id="mobile" value="Mobile"><label for="mobile" class="course-type">Mobile App</label><br>
+    <input onclick="selectCourse('graphic')" type="radio" name="select" id="Graphic" value="Graphic"><label for="Graphic" class="course-type">Graphic Design</label>
+ </label>
+ <br />
+
+ <b class="Question-title">Select your  Gender</b><br />
+ <label for="" id="selectCourse">
+    <input  type="radio" name="Gender"   id="Male" value="Male" >
+        <label for="Male" class="course-type">Male</label> <br>
+
+    <input  type="radio" name="Gender" id="Feemale" value="Feemale">
+        <label for="Feemale" class="course-type">Feemale</label><br>
+
+    <input type="radio" name="Gender" id="Others"  value="Others">
+        <label for="Others" class="course-type">Others</label>
+ </label><br />
+
+  <label for="" class="city-select">Select City Name</label>
+   <select name="" id="select" onblur="selectCity()">
+    <option value="Diplo">Diplo</option>
+    <option value="Mithi">Mithi</option>
+    <option value="Islamkot">Islamkot</option>
+    <option value="Diplo">Diplo</option>
+   </select><br />
+
+  <label for="">City code</label>
+  <input type="number" id="Typenumber"><br />
+
+     <label id="Qustion_pera">
+       About select  your course ?
+     </label> <br />
+  
+    <textarea name="" id="">
+    </textarea>
+    <br /><br />
+
+   <input type="reset" class="_btn" value="reset" >
+   <button class="_btn">Send</button>
+
+</form>
+
+
+</body>
+ <script src="./index.js"></script>
+</html>
