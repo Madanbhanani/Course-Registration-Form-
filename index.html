@@ -3,123 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dom</title>
-    <style>
-      
-
- /*__________________________ form _______________________*/
-        form{
-            border: 2px solid;
-            width: 50%;
-            padding: 10px;
-            border-radius: 4px;
-            margin: auto;
-            background-color: rgb(223, 219, 228);
-        }
-        form .input-text{
-            width: 40%;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            padding: 10px;
-            border-radius: 3px;
-            border: none;
-            border: 1px solid;
-        }
-        h3{
-            text-align: center;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-        }
-        #email{
-            width: 70%;
-        }
-        .course-type{
-            font-size: 12px;
-            font-weight: bold;
-        }
-        .Question-title{
-            line-height: 40px;
-        }
-
-
-        select{
-            width: 30%;
-        }
-
-
-        .city-select{
-            font-size: 15px;
-            font-weight: bold;
-            line-height: 40px;
-        }
-
-        #Typenumber{
-            width: 30%;
-            border: 1px solid;
-        }
-
-        #Qustion_pera{
-            max-height: 200px;
-            line-height: 40px;
-        }
-        textarea{
-            min-height: 40px;
-            width: 60%;
-        }
-        #buttonChange{
-          position: relative;
-          right: 35px;
-          height: 15px;
-          padding-top: 10px;         
-        }
-
-
-        ._btn{
-            padding: 4px 10px;
-            font-size: 20px ;
-            font-weight: bold;
-            border: 2px solid;
-            border-radius: 4px ;
-        }
-        
-
-        @media (max-width:600px){
-        form .input-text{
-            width: 70%;
-            border: 1px solid;
-        }
-        textarea{
-            border: 1px solid;
-            width: 70%;
-        }
-
-        }
-
-
-        @media (max-width:300px){
-        #buttonChange{
-          right: 10px;
-          height: 15px;
-          padding-top: 10px;         
-        }
-
-        #typeid{
-            width: 60%;
-            right: 0px;
-        }
-        
-        }
-
-     
-
-    
-        
-    </style>
+    <title>Course Registration Form</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
 
 <!--____________________________ form ___________________________-->
-<form action="./submit Page/index.html">
+<form action="" id="form">
     <h3>Course Registration Form</h3>
 
     <label for="Name"><b>Name:</b></label><br>
@@ -140,14 +31,13 @@
 
 
     <label for="typeid"><b>Password:</b></label><br>
-    <input type="password" class="input-text" id="typeid" placeholder="Enter password >8" onblur="longNum()">
+    <input type="password" class="input-text" id="typeid" placeholder="Enter password " oninput="longNum()">
         <img src="./eye-solid.svg" onclick="changetype('hide')" id="buttonChange" >
-
     <br />
 
     <label for=""><b class="Question-title">Select your course</b></label><br />
  <label for="" id="selectCourse" >
-    <input onclick="selectCourse('web')" value="Web" type="radio"  name="select" id="Web" ><label for="Web" class="course-type">Web Development</label> <br>
+    <input onclick="selectCourse('web')" value="Web" type="radio"  name="select" id="Web" checked ><label for="Web" class="course-type">Web Development</label> <br>
     <input onclick="selectCourse('mobile')" type="radio" name="select" id="mobile" value="Mobile"><label for="mobile" class="course-type">Mobile App</label><br>
     <input onclick="selectCourse('graphic')" type="radio" name="select" id="Graphic" value="Graphic"><label for="Graphic" class="course-type">Graphic Design</label>
  </label>
@@ -155,8 +45,8 @@
 
  <b class="Question-title">Select your  Gender</b><br />
  <label for="" id="selectCourse">
-    <input  type="radio" name="Gender"   id="Male" value="Male" >
-        <label for="Male" class="course-type">Male</label> <br>
+    <input  type="radio" name="Gender" checked   id="Male" value="Male" >
+        <label for="Male" class="course-type" >Male</label> <br>
 
     <input  type="radio" name="Gender" id="Feemale" value="Feemale">
         <label for="Feemale" class="course-type">Feemale</label><br>
@@ -179,13 +69,13 @@
      <label id="Qustion_pera">
        About select  your course ?
      </label> <br />
-  
-    <textarea name="" id="">
+
+    <textarea name="" id="textarea">
     </textarea>
     <br /><br />
 
    <input type="reset" class="_btn" value="reset" >
-   <button class="_btn">Send</button>
+   <button class="_btn" onclick="sedData()">Send</button>
 
 </form>
 

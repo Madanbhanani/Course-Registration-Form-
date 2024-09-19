@@ -1,13 +1,5 @@
 
 
-
-
-
-
-
-
-
-
 function selectCourse(TyPE){
     if(TyPE === "web"){
         document.getElementById('Qustion_pera').innerHTML="why you Select web Development ?"
@@ -38,16 +30,6 @@ function selectCity(){
     }
   
 }
-// __________Gender select
-
-
-
-   function SelectGender(typeG){
-      if(typeG === "male"){
-         document.getElementById("label").value="Male"
-        }
-
-   }
 
 //__________ password buttion
 
@@ -57,11 +39,12 @@ var buttonId=document.getElementById("buttonChange");
 
 
 function longNum(){
-    if(getId.value.length < 8){
-        getId.value="" 
+    if(getId.value.length > 13){
+        alert("password length Less then 13");
+        getId.value=""
     }
-   
 }
+
 function changetype(hide){
 
     if(getId.type === "text"){
@@ -71,11 +54,32 @@ function changetype(hide){
     else{
         getId.type = "text"
         document.getElementById("buttonChange").src="./eye-solid.svg"
-
     }
 }
 
+    var Name=document.getElementById("Name");
+    var fName=document.getElementById("text-fName");
+    var Contact=document.getElementById("Contact");
+    var email=document.getElementById("email");
+    var password=document.getElementById("typeid");
+    var cityCode=document.getElementById("Typenumber");
+    var textArea=document.getElementById("textarea")
+
+function sedData(){
+    
+      if(Name.value !== "" && fName.value !== "" && Contact.value !== "" &&
+        email.value !== "" && password.value !== "" && cityCode.value !== "" && textArea.value !== ""
+      ){
+        var xInput=document.getElementById("form");
+         xInput.setAttribute("action","./submitpage/index.html");
+      }
+      else{
+        alert("pleaase Enter data")
+      }
 
 
+
+  
+}
 
 
